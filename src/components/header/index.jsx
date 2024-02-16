@@ -7,23 +7,24 @@ const HeaderDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 3rem 0;
 `
 
 const Img = styled.img`
-  height: 40px;
+  height: 65px;
 `
 
 const Nav = styled.nav`
   display: flex;
   align-items: space-between;
-  gap: 2rem;
+  gap: 3rem;
 `
 
 const LinkNav = styled(Link)`
   text-decoration: none;
   color: black;
   font-weight: 500;
+  font-size: 26px;
   &:hover {
     text-decoration: underline;
   }
