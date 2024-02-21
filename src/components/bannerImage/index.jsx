@@ -1,7 +1,5 @@
-import { Fragment } from "react";
 import styled from "styled-components";
 
-import Source1 from "../../assets/source_1.png";
 
 const Banner = styled.div`
     position: relative;
@@ -15,8 +13,8 @@ const BannerImg = styled.img`
     width: 100%;
     object-fit: cover;
     border-radius: 25px;
-    filter: brightness(50%);
     box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.38);
+    filter: brightness(${({bannerOpacity}) => bannerOpacity});
 `
 
 const Title = styled.div` 
@@ -28,11 +26,14 @@ const Title = styled.div`
     text-shadow: 0px 0px 3px black;
 `
 
-function BannerImage() {
+function BannerImage({bannerUrl, bannerText, bannerOpacity}) {
+
+  console.log(bannerOpacity)
+
   return (
     <Banner>
-      <BannerImg src={Source1} alt="" />
-      <Title>Chez vous, partout et ailleurs</Title>
+      <BannerImg src={bannerUrl} alt="" bannerOpacity={bannerOpacity} />
+      <Title>{bannerText}</Title>
     </Banner>
   );
 }

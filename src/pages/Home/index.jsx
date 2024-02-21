@@ -7,6 +7,7 @@ import BannerImage from "../../components/BannerImage";
 import CardRent from "../../components/CardRent";
 
 import logements from "../../data/logements";
+import Source1 from "../../assets/source_1.png";
 
 const GreyBG = styled.div`
     background-color: ${colors.lightGrey};
@@ -27,7 +28,11 @@ const Grid = styled.div`
 function Home() {
     return(
         <Fragment>
-            <BannerImage/>
+            <BannerImage
+                bannerUrl={Source1}
+                bannerText="Chez vous, partout et ailleurs"
+                bannerOpacity="0.5"
+            />
             <GreyBG>
                 <Grid>
                     {logements.map((logement) => (

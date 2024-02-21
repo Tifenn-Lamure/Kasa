@@ -9,6 +9,7 @@ const FooterDisplay = styled.div`
     align-items: center;
     background: black;
     height : 15rem;
+    width: 100%;
     padding-top: 15px;
 `
 
