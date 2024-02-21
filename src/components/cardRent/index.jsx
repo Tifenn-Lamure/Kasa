@@ -10,7 +10,7 @@ const CardAppartment = styled.div`
     position: relative;
 `
 
-const Cardtitle = styled.div`
+const CardTitle = styled.div`
     position: absolute;
     font-weight: 700;
     font-size: 16px;
@@ -38,7 +38,7 @@ function CardRent({rentName, rentPic}) {
     return(
         <CardAppartment>
             <CardGradient></CardGradient>
-            <Cardtitle>{rentName}</Cardtitle>
+            <CardTitle>{rentName}</CardTitle>
             <BGPic src={rentPic} alt="photos des appartements"></BGPic>
         </CardAppartment>
     )
