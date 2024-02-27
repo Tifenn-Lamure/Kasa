@@ -28,8 +28,6 @@ const Title = styled.div`
 
 function BannerImage({bannerUrl, bannerText, bannerOpacity}) {
 
-  console.log(bannerOpacity)
-
   return (
     <Banner>
       <BannerImg src={bannerUrl} alt="" bannerOpacity={bannerOpacity} />
