@@ -9,7 +9,11 @@ const Layout = styled.div`
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin: 30px 80px;
+    margin: 30px 0;
+
+    @media screen and (min-width: 480px){
+        margin: 30px 80px;
+    }
 `
 
 function About() {

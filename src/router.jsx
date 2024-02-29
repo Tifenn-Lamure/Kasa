@@ -10,7 +10,19 @@ import NotFound404 from './pages/NotFound404'
 import Rent from './pages/Rent'
 
 const Layout = styled.div`
-    margin-inline: 20rem;
+    min-height: calc(100vh - 10rem);
+    display: flex;
+    flex-direction: column;
+    margin-inline: 30px;
+
+    @media screen and (min-width: 1024px){
+        min-height: calc(100vh - 10rem - 40px);
+        margin-inline: 5rem;
+    }
+
+    @media screen and (min-width: 1440px){
+        margin-inline: 10rem;
+    }
 `
 
 function RouterComponent() {

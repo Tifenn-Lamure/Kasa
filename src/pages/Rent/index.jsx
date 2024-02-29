@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Fragment } from "react";
 import { useParams } from "react-router";
 import Slideshow from "../../components/Slideshow";
-import NotFound404 from '../../pages/NotFound404'
 import { Navigate } from "react-router-dom";
 import Collapse from "../../components/Collapse";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,9 +10,14 @@ import logements from "../../data/logements";
 import colors from "../../utils/styles/colors";
 
 const RentInfo = styled.div`
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+
+    @media screen and (min-width: 1024px){
+        flex-direction: row;
+    }
 `
 
 const RentTitle = styled.div`
@@ -31,8 +35,15 @@ const RentLocation = styled.div`
 
 const RentTags = styled.div`
     display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 1.5rem;
+
+    @media screen and (min-width: 480px){
+        flex-direction: row;
+    }
 `
 
 const RentTag = styled.div`
@@ -44,13 +55,35 @@ const RentTag = styled.div`
     text-align: center;
     border-radius: 10px;
     font-size: 14px;
+    width: fit-content;
+`
+
+const RentProfile = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+
+    @media screen and (min-width: 480px){
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+    }
+
+    @media screen and (min-width: 1024px){
+        flex-direction: column;
+    }
 `
 
 const RentOwner = styled.div`
     display: flex;
     align-items: center;
     gap: 15px;
-    justify-content: end;
+
+    @media screen and (min-width: 480px){
+        justify-content: end;
+    }
 `
 
 const RentOwnerPicture = styled.img`
@@ -81,10 +114,15 @@ const IconStar = styled(FontAwesomeIcon)`
 `
 
 const RentCollapses= styled.div`
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5em;
-    margin: 1.3rem 0;
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 0;
+
+    @media screen and (min-width: 1024px){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5em;
+    }
 `
 
 function Rent() {
@@ -107,8 +145,7 @@ function Rent() {
                             ))}
                         </RentTags>
                     </div>
-                    <div>
-
+                    <RentProfile>
                         <RentOwner>
                             <RentOwnerName>
                                 <div>{foundLogement.host.name.split(' ')[0]}</div>
@@ -122,7 +159,7 @@ function Rent() {
                                 <IconStar isPink={index < foundLogement.rating} key={index} icon={faStar} size="xl"/>
                             ))}                        
                         </RentRating>
-                    </div>
+                    </RentProfile>
                 </RentInfo>
                 <RentCollapses>
                     <Collapse
@@ -138,7 +175,6 @@ function Rent() {
         )
     }else{
         return(
-            // <NotFound404/>
             <Navigate to="/error404" replace={true} />
         )
     }

@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import colors from "../../utils/styles/colors";
-import { Fragment } from "react";
 
 const CardAppartment = styled.div`
     width: 100%;
@@ -15,9 +13,11 @@ const CardTitle = styled.div`
     font-weight: 700;
     font-size: 16px;
     color: white;
-    bottom: 0;
-    padding: 0 20px 40px 20px;
+    bottom: 30px;
+    left: 20px;
+    right: 20px;
 `
+
 const CardGradient = styled.div`
     position: absolute;
     bottom: 4px;

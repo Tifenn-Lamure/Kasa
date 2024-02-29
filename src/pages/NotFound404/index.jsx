@@ -13,19 +13,24 @@ const PageDisplay = styled.div`
 const E404 = styled.div`
     color: ${colors.pink};
     font-weight: 700;
-    font-size: 200px;
+    font-size: 100px;
+    
+    @media screen and (min-width: 480px){
+        font-size: 200px;
+    }
 `
 
 const ErrorText = styled.div`
     color: ${colors.pink};
     font-weight: 500;
     font-size: 25px;
+    text-align: center;
 `
 
 const HomePageLink = styled(Link)`
-color: black;
-font-weight: 600;
-font-size: 13px;
+    color: black;
+    font-weight: 600;
+    font-size: 13px;
 `
 
 function NotFound404() {

@@ -5,21 +5,34 @@ import LogoKasaWhite from "../../assets/logo_kasa_white.png"
 const FooterDisplay = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background: black;
-    height : 15rem;
+    height : 10rem;
     width: 100%;
-    padding-top: 15px;
+    margin-top: auto;
+
+    @media screen and (min-width: 1024px){
+        justify-content: space-around;
+        padding-top: 40px;
+    }
 `
 
 const KasaWhiteLogo = styled.img`
-    height: 3em;
+    height: 2.5em;
 `
 const KasaRights = styled.div`
     font-weight: 400;
-    font-size: 24px;
+    font-size: 12px;
     color: white;
+    margin-top: 0.5rem;
+    text-align: center;
+    width: 30%;
+    padding-inline: auto;
+
+    @media screen and (min-width: 1024px){
+        font-size: 24px;
+    }
 `
 
 function Footer() {

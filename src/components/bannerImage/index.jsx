@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const Banner = styled.div`
     position: relative;
     display: flex;
@@ -21,9 +20,15 @@ const Title = styled.div`
     position: absolute;
     color: white;
     font-weight: 700;
-    font-size: 48px;
-    text-align: center;
     text-shadow: 0px 0px 3px black;
+    font-size: 32px;
+    text-align: left;
+    padding: 1.5rem;
+
+    @media screen and (min-width: 1024px){
+      font-size: 48px;
+      text-align: center;
+  }
 `
 
 function BannerImage({bannerUrl, bannerText, bannerOpacity}) {
