@@ -10,69 +10,84 @@ import logements from "../../data/logements";
 import colors from "../../utils/styles/colors";
 
 const RentInfo = styled.div`
-    margin-top: 30px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     @media screen and (min-width: 1024px){
         flex-direction: row;
+        margin-top: 30px;
     }
 `
 
 const RentTitle = styled.div`
-    margin-top: 0.8rem;
+    margin-top: 0;
     color: ${colors.pink};
     font-weight: 500;
-    font-size: 36px;
+    font-size: 24px;
+
+    @media screen and (min-width: 480px){
+        margin-top: 0.8rem;
+        font-size: 36px;
+    }
 `
 
 const RentLocation = styled.div`
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     margin-top: 5px;
+
+    @media screen and (min-width: 480px){
+        font-size: 18px;
+    }
 `
 
 const RentTags = styled.div`
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: 1.5rem;
+    margin: 0.8rem 0;
 
     @media screen and (min-width: 480px){
-        flex-direction: row;
+        margin-top: 1.5rem;
     }
 `
 
 const RentTag = styled.div`
     background-color: ${colors.pink};
-    min-width: 9rem;
+    min-width: 6rem;
     color: white;
     font-weight: 600;
     padding: 0.3rem 0.15rem;
     text-align: center;
-    border-radius: 10px;
-    font-size: 14px;
+    border-radius: 6px;
+    font-size: 10px;
     width: fit-content;
+
+    @media screen and (min-width: 480px){
+        min-width: 9rem;
+        font-size: 14px;
+        padding: 0.3rem 0.15rem;
+    }
 `
 
 const RentProfile = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px 0;
+    margin: 10px 0;
 
-    @media screen and (min-width: 480px){
+    @media screen and (min-width: 360px){
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
-        margin: 0;
     }
-
     @media screen and (min-width: 1024px){
         flex-direction: column;
+        justify-content: start;
     }
 `
 
@@ -87,36 +102,59 @@ const RentOwner = styled.div`
 `
 
 const RentOwnerPicture = styled.img`
-    height: 5em;
-    width: 5em;
+    height: 2.5em;
+    width: 2.5em;
     border-radius: 9999px;
     background: url("${({pictureUrl}) => pictureUrl}");
     object-fit: cover;
+
+    @media screen and (min-width: 360px){
+        height: 3.5em;
+        width: 3.5em;
+    }
+    @media screen and (min-width: 480px){
+        height: 5em;
+        width: 5em;
+    }
 `
 
 const RentOwnerName = styled.div`
     display: flex;
     flex-direction: column;
     color: ${colors.pink};
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     text-align: right;
+
+    @media screen and (min-width: 480px){
+        font-size: 18px;
+    }
 `
 
 const RentRating = styled.div`
     display: flex;
-    gap: 0.8rem;
+    gap: 0.4rem;
     margin-top: 1rem;
+
+    @media screen and (min-width: 480px){
+        gap: 0.8rem;
+    }
 `
 
 const IconStar = styled(FontAwesomeIcon)`
+    font-size: 18px;
     color: ${({isPink}) => isPink ? `${colors.pink}` : `${colors.lightGrey}`};
+
+    @media screen and (min-width: 480px){
+        font-size: 24px;
+    }
 `
 
 const RentCollapses= styled.div`
     display: flex;
     flex-direction: column;
     margin: 1.5rem 0;
+    gap: 1.5em;
 
     @media screen and (min-width: 1024px){
         display: grid;
@@ -156,7 +194,7 @@ function Rent() {
 
                         <RentRating>
                             {Array.from({length: 5}, (_, index) => (
-                                <IconStar isPink={index < foundLogement.rating} key={index} icon={faStar} size="xl"/>
+                                <IconStar isPink={index < foundLogement.rating} key={index} icon={faStar}/>
                             ))}                        
                         </RentRating>
                     </RentProfile>

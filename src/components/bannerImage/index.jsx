@@ -8,12 +8,16 @@ const Banner = styled.div`
 `
 
 const BannerImg = styled.img`
-    height: 220px;
+    height: 120px;
     width: 100%;
     object-fit: cover;
     border-radius: 25px;
     box-shadow: 0px 6px 8px 0px rgba(0,0,0,0.38);
     filter: brightness(${({bannerOpacity}) => bannerOpacity});
+
+    @media screen and (min-width: 480px){
+      height: 220px;
+    }
 `
 
 const Title = styled.div` 
@@ -21,14 +25,18 @@ const Title = styled.div`
     color: white;
     font-weight: 700;
     text-shadow: 0px 0px 3px black;
-    font-size: 32px;
+    font-size: 24px;
     text-align: left;
     padding: 1.5rem;
+
+    @media screen and (min-width: 480px){
+      font-size: 32px;
+    }
 
     @media screen and (min-width: 1024px){
       font-size: 48px;
       text-align: center;
-  }
+    }
 `
 
 function BannerImage({bannerUrl, bannerText, bannerOpacity}) {

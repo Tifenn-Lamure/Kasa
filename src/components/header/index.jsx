@@ -14,8 +14,8 @@ const HeaderDiv = styled.div`
 const Img = styled.img`
   height: 30px;
 
-  @media screen and (min-width: 480px){
-    height: 40px;
+  @media screen and (min-width: 360px){
+    height: 45px;
   }
   @media screen and (min-width: 1024px){
     height: 65px;

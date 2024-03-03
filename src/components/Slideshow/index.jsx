@@ -10,16 +10,20 @@ const DisplayPictures = styled.div`
 `
 
 const SlideImage = styled.img`
+    height: 300px;
     width: 100%;
-    height: 500px;
     object-fit: cover;
     border-radius: 20px;
     user-select: none;
+
+    @media screen and (min-width: 480px){
+        height: 500px;
+    }
 `
 
 const IconChevronLeft = styled(FontAwesomeIcon)`
     color: white;
-    font-size: 5em;
+    font-size: 3em;
     transform: rotate(270deg);
     position: absolute;
     left:0;
@@ -27,10 +31,14 @@ const IconChevronLeft = styled(FontAwesomeIcon)`
     transform-origin: center;
     cursor: pointer;
     user-select: none;
+
+    @media screen and (min-width: 480px){
+        font-size: 5em;
+    }
 `
 const IconChevronRight = styled(FontAwesomeIcon)`
     color: white;
-    font-size: 5em;
+    font-size: 3em;
     transform: rotate(90deg);
     position: absolute;
     right:0;
@@ -38,6 +46,10 @@ const IconChevronRight = styled(FontAwesomeIcon)`
     transform-origin: center;
     cursor: pointer;
     user-select: none;
+
+    @media screen and (min-width: 480px){
+        font-size: 5em;
+    }
 `
 
 const CurrentSlide = styled.div`

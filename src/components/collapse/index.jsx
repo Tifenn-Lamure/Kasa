@@ -15,24 +15,35 @@ const CollapseHead = styled.div`
     justify-content: space-between;
     align-items: center;
     background-color: ${colors.pink};
-    padding: 12px 12px 12px 12px;
+    padding: 0.8rem;
     border-radius: 7px;
 `
 
 const Title = styled.div`
     color: white;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 18px;
+
+    @media screen and (min-width: 480px){
+        font-size: 24px;
+    }
 `
 
 const CollapseBody = styled.div`
     position: relative;
+    max-height: ${({isCollapseActive}) => isCollapseActive ? '100%' : '0'};
     transform: ${({isCollapseActive}) => isCollapseActive ? 'translateY(0)' : 'translateY(-100%)'}; 
     z-index: -1;
     transition: all 0.5s;
     background-color: ${colors.lightGrey};
-    padding: 1rem 1rem 1rem 1rem;
     border-radius: 0 0 7px 7px;
+    > *{
+        padding: 1rem;
+        max-height: ${({isCollapseActive}) => isCollapseActive ? '100%' : '0'};
+        transform: ${({isCollapseActive}) => isCollapseActive ? 'translateY(0)' : 'translateY(-100%)'}; 
+        transition: all 0.5s;
+        overflow: hidden;
+    }
 `
 
 const IconChevron = styled(FontAwesomeIcon)`
@@ -44,7 +55,6 @@ const IconChevron = styled(FontAwesomeIcon)`
 const ListFormat = styled.ul`
     list-style: none;
     margin: 0;
-    padding: 0;
 `
 
 function Collapse({collapseTitle, collapseText}) {

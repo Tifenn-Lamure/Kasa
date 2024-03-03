@@ -2,10 +2,14 @@ import styled from "styled-components";
 
 const CardAppartment = styled.div`
     width: 100%;
-    aspect-ratio: 1;
+    aspect-ratio: 3/2;
     margin: auto;
     border-radius: 15px;
     position: relative;
+
+    @media screen and (min-width: 480px){
+        aspect-ratio: 1;
+    }
 `
 
 const CardTitle = styled.div`
