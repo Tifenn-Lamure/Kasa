@@ -9,6 +9,9 @@ import Home from './pages/Home'
 import NotFound404 from './pages/NotFound404'
 import Rent from './pages/Rent'
 
+import ScrollToTop from "./components/ScrollToTop";
+
+
 const Layout = styled.div`
     min-height: calc(100vh - 10rem);
     display: flex;
@@ -28,6 +31,7 @@ const Layout = styled.div`
 function RouterComponent() {
     return (
         <Router>
+            <ScrollToTop/>
 
             <Layout>
                 <Header/>
