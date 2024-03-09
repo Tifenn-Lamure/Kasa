@@ -71,7 +71,9 @@ function Slideshow({pictures}) {
                 <IconChevronLeft icon={faChevronUp} onClick={() => changeIndex(currentIndex > 0 ? currentIndex - 1 : pictures.length - 1)}/>
                 <IconChevronRight icon={faChevronUp} onClick={() => changeIndex(currentIndex < pictures.length - 1 ? currentIndex + 1 : 0)}/>
             </Fragment>}
+            {pictures.length > 1 && 
             <CurrentSlide>{currentIndex + 1}/{pictures.length}</CurrentSlide>
+            }
         </DisplayPictures>
     )
 }
